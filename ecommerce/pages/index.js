@@ -12,6 +12,7 @@ export default function Home() {
       <h1>Hola mundo, next.js</h1>
       <button onClick={()=>{setClick(click+1)}}>{click}</button>
       <Link href="/pokemon">Pokemon</Link>
+      <Link href="/pokemon_ssr">Pokemon SSR</Link>
     </>
   )
 }

@@ -23,7 +23,11 @@ export async function getStaticProps({params}){
 
     return {
         props:{
-            data:pokemon
+            data:{
+                name: pokemon.name,
+                weight: pokemon.weight,
+                sprites: pokemon.sprites,
+            }
         }
     }
 }

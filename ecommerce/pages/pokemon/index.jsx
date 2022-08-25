@@ -21,8 +21,8 @@ export default function Pokemon({data}) {
     <div>
       <h1>Pokemon</h1>
       {data?.map(pokemon=>{
-        return <Link href={"/pokemon/"+pokemon.name} >
-          <article key={pokemon.name}>
+        return <Link key={pokemon.name} href={"/pokemon/"+pokemon.name} >
+          <article>
             <p>{pokemon.name}</p>
           </article>
         </Link>

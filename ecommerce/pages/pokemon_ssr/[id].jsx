@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import axios from "axios"
 
 // SSR
 export async function getServerSideProps({params}){
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+params.id)
-    const pokemon = await response.json()
+    const {data:pokemon} = await axios.get("https://pokeapi.co/api/v2/pokemon/"+params.id)
 
     return {
         props:{
@@ -17,6 +17,7 @@ export async function getServerSideProps({params}){
 }
 
 export default function PokemonDetails({data}) {
+    
   return (
     <div>
         <h1>{data.name}</h1>

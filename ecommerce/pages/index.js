@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
-import styles from '../styles/Home.module.css'
 import Link from "next/link"
 import Navbar from '../components/Navbar'
 
@@ -15,6 +14,8 @@ export default function Home() {
       <button onClick={()=>{setClick(click+1)}}>{click}</button>
       <Link href="/pokemon">Pokemon</Link>
       <Link href="/pokemon_ssr">Pokemon SSR</Link>
+      <Link href="/products">Products</Link>
+
     </>
   )
 }

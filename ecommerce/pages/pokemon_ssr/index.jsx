@@ -12,7 +12,7 @@ export async function getServerSideProps(){
     }
 }
   
-  export default function PokemonSSR({data}) {
+export default function PokemonSSR({data}) {
     // useEffect(()=>{
   
     // },[]) // Client side rendering

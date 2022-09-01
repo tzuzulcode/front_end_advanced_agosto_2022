@@ -15,7 +15,7 @@ export default function Home() {
       <Link href="/pokemon">Pokemon</Link>
       <Link href="/pokemon_ssr">Pokemon SSR</Link>
       <Link href="/products">Products</Link>
-
+      <Link href="/admin/products/create">Create Product</Link>
     </>
   )
 }

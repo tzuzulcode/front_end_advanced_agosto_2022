@@ -1,5 +1,6 @@
 import {initializeApp,getApps, getApp} from "firebase/app"
 import {getFirestore} from "firebase/firestore"
+import {getAuth} from "firebase/auth"
 
 // Singleton
 let app
@@ -15,3 +16,4 @@ if(!getApps.length){
 }
 
 export const database = getFirestore(app)
+export const auth = getAuth(app)

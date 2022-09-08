@@ -11,11 +11,15 @@ export default function AuthContext({children}) {
     useEffect(()=>{
         onAuthStateChanged(auth,(result)=>{
             //* Para que la aplicación no pare si result es null
-            result !== null && setUser({
-                name: result.displayName,
-                email: result.email,
-                logout: false
-            })
+            if(result){
+                console.log("SETUSER",result)
+                setUser({
+                    name: result.displayName,
+                    email: result.email,
+                    logout: false,
+                    id:result.uid
+                })
+            }
         })
     },[])
     return (

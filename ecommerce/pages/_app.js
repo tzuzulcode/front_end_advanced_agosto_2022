@@ -1,19 +1,13 @@
-import { onAuthStateChanged } from 'firebase/auth'
-import { useEffect } from 'react'
-import { auth } from '../libs/firebase'
+import AuthContext from '../context/AuthContext'
 import '../styles/globals.css'
 
+
 function MyApp({ Component, pageProps }) {
-
-  useEffect(()=>{
-    onAuthStateChanged(auth,(result)=>{
-      console.log(result)
-    })
-  },[])
-
   // Pull request(GitHub): implementando context de react para Auth 
 
-  return <Component {...pageProps} />
+  return <AuthContext>
+    <Component {...pageProps} />
+  </AuthContext> 
 }
 
 export default MyApp

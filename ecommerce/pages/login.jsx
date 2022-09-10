@@ -5,6 +5,7 @@ import {useRouter} from 'next/router'
 import CustomForm from "../components/forms/CustomForm"
 import Input from "../components/forms/Input"
 import { auth } from "../libs/firebase"
+import {providerLogin,signInMethods} from "../libs/auth"
 
 export default function Login() {
     const router = useRouter()
@@ -19,8 +20,26 @@ export default function Login() {
             setSubmitting(false)
         })
     }
+
+    const loginWithProvider = (id)=>{
+        providerLogin(id)
+        .then(result=>{
+            console.log(result)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
+
   return (
     <div>
+        <button onClick={()=>loginWithProvider(signInMethods.google)}>
+            Google
+        </button>
+        <button onClick={()=>loginWithProvider(signInMethods.facebook)}>
+            Facebook
+        </button>
+        {/* Implementar inicio de sesión con GitHub */}
         <CustomForm
             initialValues={{
                 email:"",
